@@ -10,8 +10,8 @@ import org.springframework.security.oauth2.provider.expression.OAuth2MethodSecur
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MethodSecurityConfig extends GlobalMethodSecurityConfiguration {
 
-    public static final String ROLE_STUDENT = "STUDENT";
-    public static final String ROLE_TEACHER = "TEACHER";
+    public static final String ROLE_STUDENT = "ROLE_STUDENT";
+    public static final String ROLE_TEACHER = "ROLE_TEACHER";
 
 
     @Override

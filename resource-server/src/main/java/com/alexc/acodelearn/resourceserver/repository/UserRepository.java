@@ -1,6 +1,6 @@
-package com.alexc.acodelearn.authorizationserver.repository;
+package com.alexc.acodelearn.resourceserver.repository;
 
-import com.alexc.acodelearn.authorizationserver.entity.User;
+import com.alexc.acodelearn.resourceserver.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
