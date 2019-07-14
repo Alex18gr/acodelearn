@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/CustomTokenEnhancer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/MyTokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/RolesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/DataSourceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/ServerSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/ServerSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/MyUserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/MyUserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/service/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/service/MyUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authorization-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/MethodSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/MethodSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/FooController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/FooController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/resources/persistence.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/resources/persistence.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,22 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="95" column="45" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="45" />
+            <state relative-caret-position="477">
+              <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="30" column="96" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="96" />
+            <state relative-caret-position="49">
+              <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#529#537#0" expanded="true" />
               </folding>
             </state>
@@ -497,7 +475,7 @@
       <workItem from="1562424622345" duration="17823000" />
       <workItem from="1562788432584" duration="8116000" />
       <workItem from="1562951570788" duration="19630000" />
-      <workItem from="1563110744473" duration="10328000" />
+      <workItem from="1563110744473" duration="10598000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -506,11 +484,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562803006708</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Authorization improvements">
+      <created>1563141750151</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1563141750151</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55897000" />
+    <option name="totallyTimeSpent" value="56167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -556,7 +541,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="Authorization improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Authorization improvements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -587,19 +573,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java</url>
-          <line>31</line>
+          <line>30</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java</url>
-          <line>30</line>
+          <line>29</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java</url>
-          <line>39</line>
+          <line>38</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
@@ -959,21 +945,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java">
+    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="30" column="96" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#537#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="477">
+          <caret line="95" column="45" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java">
+    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="95" column="45" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="45" />
+        <state relative-caret-position="49">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+          <folding>
+            <element signature="e#529#537#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
