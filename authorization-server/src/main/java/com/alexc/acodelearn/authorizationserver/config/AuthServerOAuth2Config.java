@@ -129,8 +129,8 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
                 .tokenStore(tokenStore())
                 .tokenEnhancer(tokenEnhancerChain)
                 .accessTokenConverter(accessTokenConverter()) // This was the mistake the last time!!!
-                .authenticationManager(authenticationManager);
-                // .tokenServices(tokenServices()); // for more control of the authentication
+                .authenticationManager(authenticationManager)
+                .tokenServices(tokenServices()); // for more control of the authentication
     }
 
     @Bean
@@ -140,7 +140,13 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
         //DefaultTokenServices tokenService = new DefaultTokenServices();
         tokenService.setTokenStore(tokenStore());
         tokenService.setSupportRefreshToken(true);
-        tokenService.setTokenEnhancer(tokenEnhancer());
+        tokenService.setAccessTokenValiditySeconds(3600);
+        tokenService.setRefreshTokenValiditySeconds(2592000);
+
+        final TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), accessTokenConverter()));
+
+        tokenService.setTokenEnhancer(tokenEnhancerChain);
         return tokenService;
     }
 

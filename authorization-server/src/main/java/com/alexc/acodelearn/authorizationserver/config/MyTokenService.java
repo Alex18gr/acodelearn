@@ -31,4 +31,9 @@ class MyTokenService extends DefaultTokenServices {
             OAuth2AccessToken token = super.refreshAccessToken(refreshTokenValue, tokenRequest);
             return token;
         }
+
+    @Override
+    public void setAccessTokenValiditySeconds(int accessTokenValiditySeconds) {
+        super.setAccessTokenValiditySeconds(accessTokenValiditySeconds);
     }
+}
