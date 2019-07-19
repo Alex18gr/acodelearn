@@ -19,7 +19,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "course")
-@JsonComponent
+// @JsonComponent
 public class Course implements Serializable {
 
     @Transient
