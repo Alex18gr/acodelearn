@@ -39,6 +39,9 @@ public class Course implements Serializable {
     @Column(name = "section_name")
     private String sectionName = "Section";
 
+    @Column(name = "semester")
+    private Integer semester;
+
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY,
     cascade = {CascadeType.PERSIST, CascadeType.MERGE,

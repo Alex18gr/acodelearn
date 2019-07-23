@@ -3,11 +3,14 @@ package com.alexc.acodelearn.resourceserver.repository;
 import com.alexc.acodelearn.resourceserver.entity.Course;
 import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CourseRepository extends JpaRepository<Course, Long> {
+import javax.transaction.Transactional;
 
-    Course findById(long id);
+@Repository
+@Transactional
+public interface CourseRepository extends JpaRepository<Course, Integer> {
 
-
+    Course findById(int id);
 
 }
