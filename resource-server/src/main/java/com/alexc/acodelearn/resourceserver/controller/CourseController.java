@@ -1,6 +1,7 @@
 package com.alexc.acodelearn.resourceserver.controller;
 
 import com.alexc.acodelearn.resourceserver.entity.Course;
+import com.alexc.acodelearn.resourceserver.entity.Resource.FileResource;
 import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
 import com.alexc.acodelearn.resourceserver.entity.User;
 import com.alexc.acodelearn.resourceserver.json.CourseJSON;
@@ -13,14 +14,15 @@ import com.alexc.acodelearn.resourceserver.util.ResourceHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -79,6 +81,21 @@ public class CourseController {
 
 
 
+    }
+
+    @RequestMapping(
+            value = "/course/{courseId}/resource/{resourceId}"
+    )
+    public HttpEntity<byte[]> getFile(@PathVariable String courseId, @PathVariable String resourceId, HttpServletResponse response) {
+        FileResource fileResource = this.resourceService.findByResourceId(Integer.parseInt(resourceId));
+        logger.info(fileResource.getName() + ", " + fileResource.getSummary() + ", " + fileResource.getFileName() +
+                ", " + fileResource.getFileType());
+
+        // set the http headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        response.setHeader("Content-Disposition", "attatchment; filename=" + fileResource.getFileName());
+        return new HttpEntity<byte[]>(fileResource.getFileData(), headers);
     }
 
 }
