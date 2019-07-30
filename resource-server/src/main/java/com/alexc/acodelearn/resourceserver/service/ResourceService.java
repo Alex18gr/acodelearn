@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class ResourceService {
@@ -25,6 +26,10 @@ public class ResourceService {
 
     public FileResource findByResourceId(Integer resourceId) {
         return fileResourceRepository.findByResourceId(resourceId);
+    }
+
+    public List<Resource> findAllById(Iterable<Integer> iterable) {
+        return this.resourceRepository.findAllById(iterable);
     }
 
 }

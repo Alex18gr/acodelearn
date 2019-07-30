@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import java.util.Arrays;
 import java.util.Date;
 
 @Entity
@@ -34,5 +35,16 @@ public class FileResource extends Resource {
         this.fileName = fileName;
         this.summary = summary;
         this.fileData = fileData;
+    }
+
+
+    @Override
+    public String toString() {
+        return "FileResource{" +
+                "fileName='" + fileName + '\'' +
+                ", fileType='" + fileType + '\'' +
+                ", summary='" + summary + '\'' +
+                ", fileData(length)=" + fileData.length +
+                '}';
     }
 }

@@ -86,15 +86,33 @@ public class CourseController {
     @RequestMapping(
             value = "/course/{courseId}/resource/{resourceId}"
     )
-    public HttpEntity<byte[]> getFile(@PathVariable String courseId, @PathVariable String resourceId, HttpServletResponse response) {
+    public HttpEntity<byte[]> getFile(
+            @PathVariable String courseId,
+            @PathVariable String resourceId,
+            HttpServletResponse response
+    ) {
+        // get authenticated user
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        User user = userService.findByUsername(auth.getName());
+
+        // receive the file resource from the service
         FileResource fileResource = this.resourceService.findByResourceId(Integer.parseInt(resourceId));
+
+        // check for the user if he is authorized to user this resource
+//        if (!courseService.isUserEnrolledInCourse(user, fileResource.getCourse())) {
+//            throw new UserNotAllowedException("User not enrolled to the course that the requested resource belongs");
+//        }
+
+        // log the resource file info
         logger.info(fileResource.getName() + ", " + fileResource.getSummary() + ", " + fileResource.getFileName() +
-                ", " + fileResource.getFileType());
+                ", " + fileResource.getFileType() + ", " + fileResource.getCourse());
 
         // set the http headers
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         response.setHeader("Content-Disposition", "attatchment; filename=" + fileResource.getFileName());
+
+        // create and return the http entity with the custom headers and the file data
         return new HttpEntity<byte[]>(fileResource.getFileData(), headers);
     }
 
