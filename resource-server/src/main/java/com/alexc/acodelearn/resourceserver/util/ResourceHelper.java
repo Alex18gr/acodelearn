@@ -1,8 +1,10 @@
 package com.alexc.acodelearn.resourceserver.util;
 
-import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
+import com.alexc.acodelearn.resourceserver.entity.Resource.*;
+import com.alexc.acodelearn.resourceserver.json.DetailedResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourceJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourcesCollectionJSON;
+import com.alexc.acodelearn.resourceserver.json.resource.*;
 
 import java.util.Collection;
 import java.util.Date;
@@ -12,11 +14,53 @@ public class ResourceHelper {
     public final static String RES_FILE = "FileResource";
     public final static String RES_LINK = "LinkResource";
     public final static String RES_REPOSITORY = "RepositoryResource";
+    public final static String RES_CODE_SNIPPET = "CodeSnippetResource";
+    public final static String RES_MD = "MarkdownDocumentResource";
+    public final static String RES_GUIDE = "GuideResource";
 
     public static class ResourceTypes {
         public static final String RESOURCE_LINK = "RESOURCE_LINK";
         public static final String RESOURCE_FILE = "RESOURCE_FILE";
         public static final String RESOURCE_REPOSITORY = "RESOURCE_REPOSITORY";
+        public static final String RESOURCE_CODE_SNIPPET = "RESOURCE_CODE_SNIPPET";
+        public static final String RESOURCE_MARKDOWN = "RESOURCE_MARKDOWN";
+        public static final String RESOURCE_GUIDE = "RESOURCE_GUIDE";
+    }
+
+    public static DetailedResourcesCollectionJSON getDetailedResourcesCollectionJSONfromResources(Collection<Resource> resources) {
+
+        DetailedResourcesCollectionJSON collectionJSON = new DetailedResourcesCollectionJSON(new Date());
+
+        for (Resource resource : resources) {
+
+            switch (resource.getClass().getSimpleName()) {
+                case RES_LINK:
+                    collectionJSON.getResources().addLinkResource(new LinkResourceJSON((LinkResource) resource));
+                    break;
+                case RES_FILE:
+                    collectionJSON.getResources().addFileResource(new FileResourceJSON((FileResource) resource));
+                    break;
+                case RES_REPOSITORY:
+                    collectionJSON.getResources()
+                            .addRepositoryResource(new RepositoryResourceJSON((RepositoryResource) resource));
+                    break;
+                case RES_CODE_SNIPPET:
+                    collectionJSON.getResources()
+                            .addCodeSnippetResource(new CodeSnippetResourceJSON((CodeSnippetResource) resource));
+                    break;
+                case RES_MD:
+                    collectionJSON.getResources()
+                            .addMarkdownResource(new MarkdownDocumentResourceJSON((MarkdownDocumentResource) resource));
+                    break;
+                case RES_GUIDE:
+                    collectionJSON.getResources()
+                            .addGuideResource(new GuideResourceJSON((GuideResource) resource));
+                    break;
+            }
+
+        }
+
+        return collectionJSON;
     }
 
     public static ResourcesCollectionJSON getResourcesCollectionJSONfromResources(Collection<Resource> resources) {
@@ -27,6 +71,12 @@ public class ResourceHelper {
                 new ResourcesCollectionJSON.ResourcesTypeCollectionJSON(ResourceTypes.RESOURCE_FILE);
         ResourcesCollectionJSON.ResourcesTypeCollectionJSON repositoryResources =
                 new ResourcesCollectionJSON.ResourcesTypeCollectionJSON(ResourceTypes.RESOURCE_REPOSITORY);
+        ResourcesCollectionJSON.ResourcesTypeCollectionJSON codeSnippetResources =
+                new ResourcesCollectionJSON.ResourcesTypeCollectionJSON(ResourceTypes.RESOURCE_CODE_SNIPPET);
+        ResourcesCollectionJSON.ResourcesTypeCollectionJSON markdownResources =
+                new ResourcesCollectionJSON.ResourcesTypeCollectionJSON(ResourceTypes.RESOURCE_MARKDOWN);
+        ResourcesCollectionJSON.ResourcesTypeCollectionJSON guideResources =
+                new ResourcesCollectionJSON.ResourcesTypeCollectionJSON(ResourceTypes.RESOURCE_GUIDE);
 
         for (Resource resource : resources) {
             ResourceJSON resourceJSON = new ResourceJSON();
@@ -47,6 +97,18 @@ public class ResourceHelper {
                     resourceJSON.setResourceType(ResourceTypes.RESOURCE_REPOSITORY);
                     repositoryResources.addResource(resourceJSON);
                     break;
+                case RES_CODE_SNIPPET:
+                    resourceJSON.setResourceType(ResourceTypes.RESOURCE_CODE_SNIPPET);
+                    repositoryResources.addResource(resourceJSON);
+                    break;
+                case RES_MD:
+                    resourceJSON.setResourceType(ResourceTypes.RESOURCE_MARKDOWN);
+                    repositoryResources.addResource(resourceJSON);
+                    break;
+                case RES_GUIDE:
+                    resourceJSON.setResourceType(ResourceTypes.RESOURCE_GUIDE);
+                    repositoryResources.addResource(resourceJSON);
+                    break;
             }
         }
 
@@ -54,6 +116,9 @@ public class ResourceHelper {
         resourcesCollectionJSON.addResourcesCollectionJSON(linkResources);
         resourcesCollectionJSON.addResourcesCollectionJSON(fileResources);
         resourcesCollectionJSON.addResourcesCollectionJSON(repositoryResources);
+        resourcesCollectionJSON.addResourcesCollectionJSON(codeSnippetResources);
+        resourcesCollectionJSON.addResourcesCollectionJSON(markdownResources);
+        resourcesCollectionJSON.addResourcesCollectionJSON(guideResources);
 
         return resourcesCollectionJSON;
     }

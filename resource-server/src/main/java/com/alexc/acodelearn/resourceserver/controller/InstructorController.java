@@ -3,6 +3,7 @@ package com.alexc.acodelearn.resourceserver.controller;
 import com.alexc.acodelearn.resourceserver.entity.Course;
 import com.alexc.acodelearn.resourceserver.entity.User;
 import com.alexc.acodelearn.resourceserver.json.CourseJSON;
+import com.alexc.acodelearn.resourceserver.json.DetailedResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.rest.UserNotAllowedException;
 import com.alexc.acodelearn.resourceserver.service.CourseService;
@@ -57,16 +58,48 @@ public class InstructorController {
 //        list.add(4);
 //        list.add(8);
 
-        // here we must check if the course that will be put in the path have these resources
+        // TODO: here we must check if the course that will be put in the path have these resources
 
 
-        // we need a way to get the resources with their details
+        // TODO: we need a way to get the resources with their details
         logger.info(this.resourceService.findAllById(payload).toString());
         ResourcesCollectionJSON courseResources =
                 ResourceHelper.getResourcesCollectionJSONfromResources(
                         this.resourceService.findAllById(payload)
                 );
         return courseResources;
+
+    }
+
+    @RequestMapping(
+            value = "/get-resources-all",
+            method = RequestMethod.POST)
+    // public void process(@RequestBody List<Map<String, Object>> payload)
+    public DetailedResourcesCollectionJSON processDetailed(@RequestBody List<Integer> payload)
+            throws Exception {
+
+        logger.info(payload.toString());
+
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(10);
+//        list.add(12);
+//        list.add(13);
+//        list.add(14);
+//        list.add(3);
+//        list.add(4);
+//        list.add(8);
+
+        // TODO: here we must check if the course that will be put in the path have these resources
+
+
+        // TODO: we need a way to get the resources with their details
+        logger.info(this.resourceService.findAllById(payload).toString());
+        DetailedResourcesCollectionJSON resources =
+                ResourceHelper.getDetailedResourcesCollectionJSONfromResources(
+                        this.resourceService.findAllById(payload)
+                );
+        return resources;
 
     }
 
