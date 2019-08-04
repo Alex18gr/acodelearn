@@ -52,6 +52,6 @@ public class User implements Serializable {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-    private Collection<Course> coursesOwned;
+    private List<Course> coursesOwned;
 
 }

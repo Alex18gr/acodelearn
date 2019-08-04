@@ -31,5 +31,13 @@ public class CourseService {
         return false;
     }
 
+    public boolean isUserOwnCourse(User user, Course course) {
+        List<Course> userCourses = user.getCoursesOwned();
+        for (Course c : userCourses) {
+            if (c.equals(course)) return true;
+        }
+        return false;
+    }
+
 
 }

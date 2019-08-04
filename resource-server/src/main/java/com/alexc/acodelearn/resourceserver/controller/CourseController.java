@@ -5,6 +5,7 @@ import com.alexc.acodelearn.resourceserver.entity.Resource.FileResource;
 import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
 import com.alexc.acodelearn.resourceserver.entity.User;
 import com.alexc.acodelearn.resourceserver.json.CourseJSON;
+import com.alexc.acodelearn.resourceserver.json.DetailedResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.rest.UserNotAllowedException;
 import com.alexc.acodelearn.resourceserver.service.CourseService;
@@ -78,9 +79,28 @@ public class CourseController {
         } else {
             throw new UserNotAllowedException("user not enrolled to this course and not authorized");
         }
+    }
 
+    @RequestMapping("/course/{courseId}/resources-all")
+    @Transactional
+    public DetailedResourcesCollectionJSON getAllCourseResources(HttpServletRequest request, @PathVariable String courseId) {
 
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = Integer.parseInt(courseId);
+        Course currentCourse = courseService.findById(mCourseId);
+        if (courseService.isUserEnrolledInCourse(user, currentCourse) ||
+            courseService.isUserOwnCourse(user, currentCourse)) {
+
+            DetailedResourcesCollectionJSON resources =
+                    ResourceHelper.getDetailedResourcesCollectionJSONfromResources(
+                            currentCourse.getCourseResources()
+                    );
+            return resources;
+        } else {
+            throw new UserNotAllowedException("user not enrolled to this course and not authorized");
+        }
     }
 
     @RequestMapping(
