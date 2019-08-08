@@ -1,6 +1,7 @@
 package com.alexc.acodelearn.resourceserver.service;
 
 import com.alexc.acodelearn.resourceserver.entity.Course;
+import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
 import com.alexc.acodelearn.resourceserver.entity.User;
 import com.alexc.acodelearn.resourceserver.repository.CourseRepository;
 import com.alexc.acodelearn.resourceserver.repository.UserRepository;
@@ -31,10 +32,23 @@ public class CourseService {
         return false;
     }
 
+    public Course saveCourse(Course course) {
+        return courseRepository.save(course);
+    }
+
     public boolean isUserOwnCourse(User user, Course course) {
         List<Course> userCourses = user.getCoursesOwned();
         for (Course c : userCourses) {
             if (c.equals(course)) return true;
+        }
+        return false;
+    }
+
+    public boolean courseHasResource(Course course, Resource resource) {
+        List<Resource> resourceList = course.getCourseResources();
+        for (Resource res : resourceList) {
+            if (res.getResourceId() == resource.getResourceId())
+                return true;
         }
         return false;
     }

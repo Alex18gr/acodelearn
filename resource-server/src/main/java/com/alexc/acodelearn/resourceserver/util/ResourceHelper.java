@@ -123,4 +123,26 @@ public class ResourceHelper {
         return resourcesCollectionJSON;
     }
 
+    public static String getResourceType(Resource resource) {
+        switch (resource.getClass().getSimpleName()) {
+            case RES_LINK:
+                return ResourceTypes.RESOURCE_LINK;
+            case RES_FILE:
+                return ResourceTypes.RESOURCE_FILE;
+            case RES_REPOSITORY:
+                return ResourceTypes.RESOURCE_REPOSITORY;
+            case RES_CODE_SNIPPET:
+                return ResourceTypes.RESOURCE_CODE_SNIPPET;
+            case RES_MD:
+                return ResourceTypes.RESOURCE_MARKDOWN;
+            case RES_GUIDE:
+                return ResourceTypes.RESOURCE_GUIDE;
+            default:
+                return "RESOURCE";
+        }
+    }
+
+    public static boolean resourcesSameType(Resource res1, Resource res2) {
+        return getResourceType(res1).equals(getResourceType(res2));
+    }
 }

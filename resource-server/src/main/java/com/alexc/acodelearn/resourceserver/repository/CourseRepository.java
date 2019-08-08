@@ -13,4 +13,6 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
 
     Course findById(int id);
 
+    @Override
+    <S extends Course> S save(S s);
 }

@@ -25,7 +25,7 @@ public class DetailedResourcesCollectionJSON {
 
         private Collection<LinkResourceJSON> linkResources;
         private Collection<RepositoryResourceJSON> repositoryResources;
-        private Collection<FileResourceJSON> resourceFiles;
+        private Collection<FileResourceJSON> fileResources;
         private Collection<CodeSnippetResourceJSON> codeSnippetResources;
         private Collection<MarkdownDocumentResourceJSON> markdownDocumentResources;
         private Collection<GuideResourceJSON> guideResources;
@@ -33,7 +33,7 @@ public class DetailedResourcesCollectionJSON {
         public DetailedResourcesTypeCollectionJSON() {
             this.linkResources = new ArrayList<>();
             this.repositoryResources = new ArrayList<>();
-            this.resourceFiles = new ArrayList<>();
+            this.fileResources = new ArrayList<>();
             this.codeSnippetResources = new ArrayList<>();
             this.markdownDocumentResources = new ArrayList<>();
             this.guideResources = new ArrayList<>();
@@ -48,7 +48,7 @@ public class DetailedResourcesCollectionJSON {
         }
 
         public void addFileResource(FileResourceJSON resource) {
-            this.resourceFiles.add(resource);
+            this.fileResources.add(resource);
         }
 
         public void addCodeSnippetResource(CodeSnippetResourceJSON resource) {
