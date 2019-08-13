@@ -117,23 +117,25 @@ public class CourseController {
         return responseEntity;
     }
 
-//    @RequestMapping(value = "/course/{courseId}/resource", method = RequestMethod.POST)
-//    public ResponseEntity<? extends AbstractResourceJSON> createResource(
-//            HttpServletRequest request,
-//            @PathVariable String courseId,
-//            @RequestBody ResourceJSON resource
-//    ) {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//
-//        User user = userService.findByUsername(auth.getName());
-//        int mCourseId = Integer.parseInt(courseId);
-//        Course currentCourse = courseService.findById(mCourseId);
-//        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
-//                user, currentCourse
-//        )) {
-//            throw new UserNotAllowedException("User not in role or user not own the resource");
-//        }
-//    }
+    @RequestMapping(value = "/course/{courseId}/resource", method = RequestMethod.POST)
+    public ResponseEntity<? extends AbstractResourceJSON> createResource(
+            HttpServletRequest request,
+            @PathVariable String courseId,
+            @RequestBody ResourceJSON resource
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = Integer.parseInt(courseId);
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+
+    }
 
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.PUT)
     public ResponseEntity<? extends AbstractResourceJSON> updateResource(

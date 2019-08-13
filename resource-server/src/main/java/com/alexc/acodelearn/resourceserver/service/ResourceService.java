@@ -42,6 +42,10 @@ public class ResourceService {
         return resourceRepository.save(r);
     }
 
+    public void delete(Resource r) {
+        resourceRepository.delete(r);
+    }
+
     public void editResource(AbstractResourceJSON resourceJSON, Resource resourceToEdit) {
 
         switch (resourceJSON.getType()) {

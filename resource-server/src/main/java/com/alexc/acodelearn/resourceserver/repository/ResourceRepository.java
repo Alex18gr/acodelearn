@@ -24,4 +24,7 @@ public interface ResourceRepository extends JpaRepository<Resource, Integer> {
 
     @Override
     <S extends Resource> S save(S s);
+
+    @Override
+    void delete(Resource resource);
 }
