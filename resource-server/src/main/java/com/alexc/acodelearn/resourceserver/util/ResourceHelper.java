@@ -22,6 +22,83 @@ public class ResourceHelper {
     public final static String RES_MD = "MarkdownDocumentResource";
     public final static String RES_GUIDE = "GuideResource";
 
+    public static Resource getResourceFormResourceJSON(AbstractResourceJSON resourceJSON) {
+        switch (resourceJSON.getType()) {
+            case ResourceHelper.ResourceTypes.RESOURCE_LINK: {
+                LinkResource resource = new LinkResource();
+                LinkResourceJSON res = (LinkResourceJSON) resourceJSON;
+
+                resource.setName(res.getName());
+                resource.setDateCreated(res.getDateCreated());
+                //
+                ((LinkResource) resource).setDescription(res.getDescription());
+                ((LinkResource) resource).setLink(res.getLink());
+                return resource;
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_FILE: {
+                FileResource resource = new FileResource();
+                FileResourceJSON res = (FileResourceJSON) resourceJSON;
+
+                resource.setName(res.getName());
+                resource.setDateCreated(res.getDateCreated());
+                //
+                ((FileResource) resource).setFileName(res.getName());
+                ((FileResource) resource).setSummary(res.getSummary());
+                return resource;
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_REPOSITORY: {
+                RepositoryResource resource = new RepositoryResource();
+                RepositoryResourceJSON res = (RepositoryResourceJSON) resourceJSON;
+
+                resource.setName(res.getName());
+                resource.setDateCreated(res.getDateCreated());
+                //
+                ((RepositoryResource) resource).setRepoName(res.getRepoName());
+                ((RepositoryResource) resource).setRepoUrl(res.getRepoUrl());
+                ((RepositoryResource) resource).setRepoNameRepo(res.getRepoNameRepo());
+                return resource;
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_CODE_SNIPPET: {
+                CodeSnippetResource resource = new CodeSnippetResource();
+                CodeSnippetResourceJSON res = (CodeSnippetResourceJSON) resourceJSON;
+
+                resource.setName(res.getName());
+                resource.setDateCreated(res.getDateCreated());
+                //
+                ((CodeSnippetResource) resource).setSnippetDescription(res.getSnippetDescription());
+                ((CodeSnippetResource) resource).setSnippetDocumentData(res.getSnippetDocumentData());
+                ((CodeSnippetResource) resource).setSnippetLanguage(res.getSnippetLanguage());
+                ((CodeSnippetResource) resource).setSnippetTitle(res.getSnippetTitle());
+                return resource;
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_GUIDE: {
+                GuideResource resource = new GuideResource();
+                GuideResourceJSON res = (GuideResourceJSON) resourceJSON;
+
+                resource.setName(res.getName());
+                resource.setDateCreated(res.getDateCreated());
+                //
+                ((GuideResource) resource).setGuideData(res.getGuideData());
+                ((GuideResource) resource).setGuideDescription(res.getGuideDescription());
+                ((GuideResource) resource).setGuideTitle(res.getGuideTitle());
+                return resource;
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_MARKDOWN: {
+                MarkdownDocumentResource resource = new MarkdownDocumentResource();
+                MarkdownDocumentResourceJSON res = (MarkdownDocumentResourceJSON) resourceJSON;
+
+                resource.setName(res.getName());
+                resource.setDateCreated(res.getDateCreated());
+                //
+                ((MarkdownDocumentResource) resource).setDescription(res.getDescription());
+                ((MarkdownDocumentResource) resource).setDocumentTitle(res.getDocumentTitle());
+                ((MarkdownDocumentResource) resource).setMarkdownDocumentData(res.getMarkdownDocumentData());
+                return resource;
+            }
+        }
+        return null;
+    }
+
     public static class ResourceTypes {
         public static final String RESOURCE_LINK = "RESOURCE_LINK";
         public static final String RESOURCE_FILE = "RESOURCE_FILE";

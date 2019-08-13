@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/ContentNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +65,8 @@
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="15" />
-    <property name="RequestMappingsPanelWidth1" value="15" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -156,7 +159,7 @@
       <workItem from="1565301137029" duration="663000" />
       <workItem from="1565382941655" duration="890000" />
       <workItem from="1565433162873" duration="16586000" />
-      <workItem from="1565697049221" duration="4096000" />
+      <workItem from="1565697049221" duration="11337000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -242,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565704990160</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added resource delete mappings">
+      <created>1565705396362</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565705396362</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +283,8 @@
     <MESSAGE value="Added get all detailed resources of a course end point to the course controller" />
     <MESSAGE value="Improve update mappings and models" />
     <MESSAGE value="Added file resource add controller mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added file resource add controller mapping" />
+    <MESSAGE value="Added resource delete mappings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added resource delete mappings" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

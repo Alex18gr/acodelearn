@@ -52,4 +52,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     }
 
+    @ExceptionHandler(ContentNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleException(ContentNotFoundException exc) {
+
+        ErrorResponse error = new ErrorResponse(
+                HttpStatus.UNAUTHORIZED.value(),
+                exc.getMessage(),
+                System.currentTimeMillis()
+        );
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+
+    }
+
 }

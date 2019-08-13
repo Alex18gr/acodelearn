@@ -8,6 +8,7 @@ import com.alexc.acodelearn.resourceserver.json.DetailedResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourceJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.resource.*;
+import com.alexc.acodelearn.resourceserver.rest.ContentNotFoundException;
 import com.alexc.acodelearn.resourceserver.rest.UserNotAllowedException;
 import com.alexc.acodelearn.resourceserver.service.CourseService;
 import com.alexc.acodelearn.resourceserver.service.ResourceService;
@@ -117,11 +118,11 @@ public class CourseController {
         return responseEntity;
     }
 
-    @RequestMapping(value = "/course/{courseId}/resource", method = RequestMethod.POST)
-    public ResponseEntity<? extends AbstractResourceJSON> createResource(
+    @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.DELETE)
+    public void deleteResource(
             HttpServletRequest request,
             @PathVariable String courseId,
-            @RequestBody ResourceJSON resource
+            @PathVariable Integer resourceId
     ) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -134,7 +135,35 @@ public class CourseController {
             throw new UserNotAllowedException("User not in role or user not own the resource");
         }
 
+        Resource resourceToDelete = resourceService.findByResourceId(resourceId);
 
+        if (resourceToDelete == null) {
+            throw new ContentNotFoundException("Resource not found");
+        } else {
+            resourceService.delete(resourceToDelete);
+        }
+    }
+
+    @RequestMapping(value = "/course/{courseId}/resource", method = RequestMethod.POST)
+    public ResponseEntity<? extends AbstractResourceJSON> createResource(
+            HttpServletRequest request,
+            @PathVariable String courseId,
+            @RequestBody AbstractResourceJSON resource
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = Integer.parseInt(courseId);
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        // now we save the resource
+        Resource savedResource = resourceService.saveResourceJSON(resource, currentCourse);
+        return this.getResponseEntity(savedResource);
     }
 
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.PUT)
@@ -169,36 +198,36 @@ public class CourseController {
         return new ResponseEntity<>(resourceJSON, HttpStatus.OK);
     }
 
-    private ResponseEntity<? extends AbstractResourceJSON> getResponseEntity(Resource editedResource) {
-        switch (ResourceHelper.getResourceType(editedResource)) {
+    private ResponseEntity<? extends AbstractResourceJSON> getResponseEntity(Resource resource) {
+        switch (ResourceHelper.getResourceType(resource)) {
             case ResourceHelper.ResourceTypes.RESOURCE_MARKDOWN:
                 return new ResponseEntity<MarkdownDocumentResourceJSON>(
-                        new MarkdownDocumentResourceJSON((MarkdownDocumentResource) editedResource),
+                        new MarkdownDocumentResourceJSON((MarkdownDocumentResource) resource),
                         HttpStatus.OK
                 );
             case ResourceHelper.ResourceTypes.RESOURCE_GUIDE:
                 return new ResponseEntity<GuideResourceJSON>(
-                        new GuideResourceJSON((GuideResource) editedResource),
+                        new GuideResourceJSON((GuideResource) resource),
                         HttpStatus.OK
                 );
             case ResourceHelper.ResourceTypes.RESOURCE_CODE_SNIPPET:
                 return new ResponseEntity<CodeSnippetResourceJSON>(
-                        new CodeSnippetResourceJSON((CodeSnippetResource) editedResource),
+                        new CodeSnippetResourceJSON((CodeSnippetResource) resource),
                         HttpStatus.OK
                 );
             case ResourceHelper.ResourceTypes.RESOURCE_REPOSITORY:
                 return new ResponseEntity<RepositoryResourceJSON>(
-                        new RepositoryResourceJSON((RepositoryResource) editedResource),
+                        new RepositoryResourceJSON((RepositoryResource) resource),
                         HttpStatus.OK
                 );
             case ResourceHelper.ResourceTypes.RESOURCE_FILE:
                 return new ResponseEntity<FileResourceJSON>(
-                        new FileResourceJSON((FileResource) editedResource),
+                        new FileResourceJSON((FileResource) resource),
                         HttpStatus.OK
                 );
             case ResourceHelper.ResourceTypes.RESOURCE_LINK:
                 return new ResponseEntity<LinkResourceJSON>(
-                        new LinkResourceJSON((LinkResource) editedResource),
+                        new LinkResourceJSON((LinkResource) resource),
                         HttpStatus.OK
                 );
         }

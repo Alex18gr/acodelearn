@@ -46,6 +46,43 @@ public class ResourceService {
         resourceRepository.delete(r);
     }
 
+    public Resource saveResourceJSON(AbstractResourceJSON resourceJSON, Course course) {
+
+        switch (resourceJSON.getType()) {
+            case ResourceHelper.ResourceTypes.RESOURCE_LINK: {
+                LinkResource resource = (LinkResource) ResourceHelper.getResourceFormResourceJSON(resourceJSON);
+                resource.setCourse(course);
+                return this.save(resource);
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_FILE: {
+                // nothing happpens here...
+                return null;
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_REPOSITORY: {
+                RepositoryResource resource = (RepositoryResource) ResourceHelper.getResourceFormResourceJSON(resourceJSON);
+                resource.setCourse(course);
+                return this.save(resource);
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_CODE_SNIPPET: {
+                CodeSnippetResource resource = (CodeSnippetResource) ResourceHelper.getResourceFormResourceJSON(resourceJSON);
+                resource.setCourse(course);
+                return this.save(resource);
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_MARKDOWN: {
+                MarkdownDocumentResource resource = (MarkdownDocumentResource) ResourceHelper.getResourceFormResourceJSON(resourceJSON);
+                resource.setCourse(course);
+                return this.save(resource);
+            }
+            case ResourceHelper.ResourceTypes.RESOURCE_GUIDE: {
+                GuideResource resource = (GuideResource) ResourceHelper.getResourceFormResourceJSON(resourceJSON);
+                resource.setCourse(course);
+                return this.save(resource);
+            }
+            default:
+                return null;
+        }
+    }
+
     public void editResource(AbstractResourceJSON resourceJSON, Resource resourceToEdit) {
 
         switch (resourceJSON.getType()) {
