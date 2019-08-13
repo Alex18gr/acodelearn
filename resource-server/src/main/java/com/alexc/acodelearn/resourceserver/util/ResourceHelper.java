@@ -5,7 +5,11 @@ import com.alexc.acodelearn.resourceserver.json.DetailedResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourceJSON;
 import com.alexc.acodelearn.resourceserver.json.ResourcesCollectionJSON;
 import com.alexc.acodelearn.resourceserver.json.resource.*;
+import com.alexc.acodelearn.resourceserver.rest.FileStorageException;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Date;
 
@@ -144,5 +148,25 @@ public class ResourceHelper {
 
     public static boolean resourcesSameType(Resource res1, Resource res2) {
         return getResourceType(res1).equals(getResourceType(res2));
+    }
+
+    public static FileResource getFileResource(MultipartFile file) {
+        // Normalize file name
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+
+        try {
+
+            if (fileName.contains("..")) {
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+
+            FileResource fileResource = new FileResource();
+            fileResource.setFileType(file.getContentType());
+            fileResource.setFileName(fileName);
+            fileResource.setFileData(file.getBytes());
+            return fileResource;
+        } catch (IOException e) {
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", e);
+        }
     }
 }

@@ -13,6 +13,7 @@ import com.alexc.acodelearn.resourceserver.service.CourseService;
 import com.alexc.acodelearn.resourceserver.service.ResourceService;
 import com.alexc.acodelearn.resourceserver.service.UserService;
 import com.alexc.acodelearn.resourceserver.util.ResourceHelper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,15 @@ import org.springframework.http.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -80,6 +84,57 @@ public class CourseController {
         }
     }
 
+    @RequestMapping(value = "/course/{courseId}/resource/file", method = RequestMethod.POST)
+    public ResponseEntity<? extends AbstractResourceJSON> createFileResource(
+            HttpServletRequest request,
+            @RequestParam("file") MultipartFile file,
+            // @RequestParam("resource") FileResourceJSON resource,
+            @RequestParam("resource") String resourceRaw,
+            @PathVariable String courseId) throws IOException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        FileResourceJSON resource = mapper.readValue(resourceRaw, FileResourceJSON.class);
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = Integer.parseInt(courseId);
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        FileResource newFileResource = ResourceHelper.getFileResource(file);
+        newFileResource.setCourse(currentCourse);
+        newFileResource.setDateCreated(new Date());
+        newFileResource.setName(resource.getName());
+        newFileResource.setSummary(resource.getSummary());
+
+        FileResource savedResource = (FileResource) resourceService.save(newFileResource);
+        ResponseEntity<? extends AbstractResourceJSON> responseEntity = getResponseEntity(savedResource);
+        return responseEntity;
+    }
+
+//    @RequestMapping(value = "/course/{courseId}/resource", method = RequestMethod.POST)
+//    public ResponseEntity<? extends AbstractResourceJSON> createResource(
+//            HttpServletRequest request,
+//            @PathVariable String courseId,
+//            @RequestBody ResourceJSON resource
+//    ) {
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//
+//        User user = userService.findByUsername(auth.getName());
+//        int mCourseId = Integer.parseInt(courseId);
+//        Course currentCourse = courseService.findById(mCourseId);
+//        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+//                user, currentCourse
+//        )) {
+//            throw new UserNotAllowedException("User not in role or user not own the resource");
+//        }
+//    }
+
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.PUT)
     public ResponseEntity<? extends AbstractResourceJSON> updateResource(
             HttpServletRequest request,
@@ -104,6 +159,15 @@ public class CourseController {
 
         resourceService.editResource(resourceJSON, resource);
         Resource editedResource = resourceService.save(resource);
+        ResponseEntity<? extends AbstractResourceJSON> x = getResponseEntity(editedResource);
+        if (x != null) return x;
+
+        // TODO: Add an error response here
+
+        return new ResponseEntity<>(resourceJSON, HttpStatus.OK);
+    }
+
+    private ResponseEntity<? extends AbstractResourceJSON> getResponseEntity(Resource editedResource) {
         switch (ResourceHelper.getResourceType(editedResource)) {
             case ResourceHelper.ResourceTypes.RESOURCE_MARKDOWN:
                 return new ResponseEntity<MarkdownDocumentResourceJSON>(
@@ -136,10 +200,7 @@ public class CourseController {
                         HttpStatus.OK
                 );
         }
-
-        // TODO: Add an error response here
-
-        return new ResponseEntity<>(resourceJSON, HttpStatus.OK);
+        return null;
     }
 
     @RequestMapping(value = "/course/{courseId}", method = RequestMethod.PUT)

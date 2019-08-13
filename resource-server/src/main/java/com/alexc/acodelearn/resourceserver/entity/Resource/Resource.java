@@ -24,7 +24,7 @@ public class Resource {
     protected String name;
 
     @Column(name = "datetime_created")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     protected Date dateCreated = new Date();
 
     @ManyToOne(

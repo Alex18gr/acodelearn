@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/AbstractResourceJSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/FileStorageException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/DetailedResourcesCollectionJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/DetailedResourcesCollectionJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/CodeSnippetResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/CodeSnippetResourceJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/FileResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/FileResourceJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/GuideResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/GuideResourceJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/LinkResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/LinkResourceJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/MarkdownDocumentResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/MarkdownDocumentResourceJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/RepositoryResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/RepositoryResourceJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/resources/application.properties" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/authorization-server/target/" />
-    <ignored path="$PROJECT_DIR$/resource-server/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,138 +39,6 @@
   <component name="FavoritesManager">
     <favorites_list name="acodelearn" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="87" column="58" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
-                <element signature="e#1168#1169#0" expanded="true" />
-                <element signature="e#1454#1455#0" expanded="true" />
-                <element signature="e#1502#1503#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/FileResourceJSON.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="37" column="32" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1133#1134#0" expanded="true" />
-                <element signature="e#1173#1174#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1326">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/AbstractResourceJSON.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/CodeSnippetResourceJSON.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/MarkdownDocumentResourceJSON.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1248#1249#0" expanded="true" />
-                <element signature="e#1288#1289#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -198,63 +57,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/service/MyUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/DataSourceConfig.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/resources/persistence.properties" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/FooController.java" />
-        <option value="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/CustomTokenEnhancer.java" />
-        <option value="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/MyTokenService.java" />
-        <option value="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/RepositoryResource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/LinkResource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/UserService.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/MethodSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/CorsFilter.java" />
-        <option value="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/CorsFilter.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/OAuth2ResourceServerConfig.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/MyCorsFilter.java" />
-        <option value="$PROJECT_DIR$/resource-server/pom.xml" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/CourseJsonSerializer.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/UserJsonSerializer.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/UserJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Course.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/CourseJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/ResourceTypes.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/Resource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/UserNotAllowedException.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/ResourcesCollectionJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/ResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/resource/FileResourceRepository.java" />
-        <option value="$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/FileResource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/ResourceFileJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/InstructorController.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/CodeSnippetResource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/MarkdownDocumentResource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/GuideResource.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/User.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/DetailedResourcesCollectionJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseRepository.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/CodeSnippetResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/FileResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/GuideResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/LinkResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/MarkdownDocumentResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/RepositoryResourceJSON.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/AbstractResourceJSON.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -262,213 +64,17 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="169" />
-    <option name="width" value="1291" />
-    <option name="height" value="489" />
-  </component>
+  <component name="ProjectId" id="1PEJ71E7MYaqAdp2kubj5S0xtqi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authorizationserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authorizationserver" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authorizationserver" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="Resource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="acodelearn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="acodelearn" type="462c0819:PsiDirectoryNode" />
-              <item name="resource-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceserver" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth0" value="15" />
+    <property name="RequestMappingsPanelWidth1" value="15" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -509,6 +115,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ResourceServerApplication">
+    <configuration name="ResourceServerApplication#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/ResourceServerApplication.http">
+      <method v="2" />
+    </configuration>
     <configuration name="AuthorizationServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="authorization-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.alexc.acodelearn.authorizationserver.AuthorizationServerApplication" />
@@ -523,6 +132,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.ResourceServerApplication#1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -546,6 +160,10 @@
       <workItem from="1564867085433" duration="12437000" />
       <workItem from="1565023428423" duration="1915000" />
       <workItem from="1565038078284" duration="10036000" />
+      <workItem from="1565301137029" duration="663000" />
+      <workItem from="1565382941655" duration="890000" />
+      <workItem from="1565433162873" duration="16586000" />
+      <workItem from="1565697049221" duration="3418000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -617,53 +235,31 @@
       <option name="project" value="LOCAL" />
       <updated>1564880593479</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Improve update mappings and models">
+      <created>1565301237305</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565301237305</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169432000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49787837" visible="true" weight="0.15565032" />
-      <window_info id="Structure" order="1" sideWeight="0.50089765" side_tool="true" weight="0.16897655" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5021216" side_tool="true" weight="0.26439232" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.21885157" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989339" visible="true" weight="0.2340195" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.28602383" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
@@ -675,16 +271,36 @@
     <MESSAGE value="Added instructor controller" />
     <MESSAGE value="Added resource hibernate mappings for code snippet, markdown document and guide resource and the json mappings of these resources" />
     <MESSAGE value="Added get all detailed resources of a course end point to the course controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added get all detailed resources of a course end point to the course controller" />
+    <MESSAGE value="Improve update mappings and models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve update mappings and models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
-          <line>104</line>
-          <properties />
-          <option name="timeStamp" value="8" />
+          <line>108</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -692,493 +308,6 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/entity/MyUserPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/ServerSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/MethodSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/OAuth2ResourceServerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/DataSourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/UserJsonSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/ResourceServerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/ResourceTypes.java" />
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/ErrorResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/ContentNotAllowedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/UserNotAllowedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="16" />
-          <folding>
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#176#177#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/UserJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/config/MyCorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/CorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/controller/TokenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/resource/FileResourceRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/FileResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/RepositoryResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorization-server/src/main/java/com/alexc/acodelearn/authorizationserver/config/AuthServerOAuth2Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="89" column="47" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="964">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/ResourcesCollectionJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/CourseJsonSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/LinkResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/GuideResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/DetailedResourcesCollectionJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/MarkdownDocumentResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" selection-start-column="59" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/CodeSnippetResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/InstructorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="100" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/CourseJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/GuideResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-            <element signature="e#1217#1218#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/LinkResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/RepositoryResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/ResourceRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/FooController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/ResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1326">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/MarkdownDocumentResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="46" column="19" lean-forward="true" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/FileResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/CodeSnippetResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="87" column="58" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/AbstractResourceJSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
