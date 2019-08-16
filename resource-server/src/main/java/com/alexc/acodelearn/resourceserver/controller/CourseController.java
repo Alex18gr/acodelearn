@@ -166,6 +166,26 @@ public class CourseController {
         return this.getResponseEntity(savedResource);
     }
 
+    @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.GET)
+    public ResponseEntity<? extends AbstractResourceJSON> getResource(
+            HttpServletRequest request,
+            @PathVariable Integer courseId,
+            @PathVariable Integer resourceId
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        Course currentCourse = courseService.findById(courseId);
+        Resource resource = resourceService.findByResourceId(resourceId);
+
+        if (!courseService.isUserOwnCourse(user, currentCourse) || !courseService.isUserEnrolledInCourse(user, currentCourse)) {
+            throw new UserNotAllowedException("User doesnt own or not enrolled to this course");
+        }
+
+        Resource receivedResource = resourceService.findByResourceId(resourceId);
+        return getResponseEntity(receivedResource);
+    }
+
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.PUT)
     public ResponseEntity<? extends AbstractResourceJSON> updateResource(
             HttpServletRequest request,
@@ -264,7 +284,11 @@ public class CourseController {
 
     @RequestMapping("/course/{courseId}/resources-all")
     @Transactional
-    public DetailedResourcesCollectionJSON getAllCourseResources(HttpServletRequest request, @PathVariable String courseId) {
+    public DetailedResourcesCollectionJSON getAllCourseResources(
+            HttpServletRequest request,
+            @PathVariable String courseId,
+            @RequestParam(name = "type", required = false) final String resourcesType
+    ) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -274,10 +298,17 @@ public class CourseController {
         if (courseService.isUserEnrolledInCourse(user, currentCourse) ||
             courseService.isUserOwnCourse(user, currentCourse)) {
 
-            DetailedResourcesCollectionJSON resources =
-                    ResourceHelper.getDetailedResourcesCollectionJSONfromResources(
-                            currentCourse.getCourseResources()
-                    );
+            DetailedResourcesCollectionJSON resources;
+            if (resourcesType == null || !ResourceHelper.isValidResourceTypeString(resourcesType)) {
+                resources = ResourceHelper.getDetailedResourcesCollectionJSONfromResources(
+                                currentCourse.getCourseResources()
+                        );
+            } else {
+                resources = ResourceHelper.getDetailedResourcesCollectionJSONfromResources(
+                                currentCourse.getCourseResources(),
+                                resourcesType
+                        );
+            }
             return resources;
         } else {
             throw new UserNotAllowedException("user not enrolled to this course and not authorized");
@@ -285,7 +316,7 @@ public class CourseController {
     }
 
     @RequestMapping(
-            value = "/course/{courseId}/resource/{resourceId}"
+            value = "/course/{courseId}/resource/{resourceId}/file"
     )
     public HttpEntity<byte[]> getFile(
             @PathVariable String courseId,

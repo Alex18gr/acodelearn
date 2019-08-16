@@ -108,7 +108,25 @@ public class ResourceHelper {
         public static final String RESOURCE_GUIDE = "RESOURCE_GUIDE";
     }
 
-    public static DetailedResourcesCollectionJSON getDetailedResourcesCollectionJSONfromResources(Collection<Resource> resources) {
+    public static boolean isValidResourceTypeString(String resourceTypeString) {
+        return resourceTypeString.equals(ResourceTypes.RESOURCE_GUIDE) ||
+                resourceTypeString.equals(ResourceTypes.RESOURCE_MARKDOWN) ||
+                resourceTypeString.equals(ResourceTypes.RESOURCE_CODE_SNIPPET) ||
+                resourceTypeString.equals(ResourceTypes.RESOURCE_REPOSITORY) ||
+                resourceTypeString.equals(ResourceTypes.RESOURCE_FILE) ||
+                resourceTypeString.equals(ResourceTypes.RESOURCE_LINK);
+    }
+
+    public static DetailedResourcesCollectionJSON getDetailedResourcesCollectionJSONfromResources(
+            Collection<Resource> resources
+    ) {
+        return ResourceHelper.getDetailedResourcesCollectionJSONfromResources(resources, "RESOURCES_ALL");
+    }
+
+    public static DetailedResourcesCollectionJSON getDetailedResourcesCollectionJSONfromResources(
+            Collection<Resource> resources,
+            String resourcesType
+    ) {
 
         DetailedResourcesCollectionJSON collectionJSON = new DetailedResourcesCollectionJSON(new Date());
 
@@ -116,24 +134,36 @@ public class ResourceHelper {
 
             switch (resource.getClass().getSimpleName()) {
                 case RES_LINK:
+                    if (!(resourcesType.equals("RESOURCES_ALL") || resourcesType.equals(ResourceTypes.RESOURCE_LINK)))
+                        break;
                     collectionJSON.getResources().addLinkResource(new LinkResourceJSON((LinkResource) resource));
                     break;
                 case RES_FILE:
+                    if (!(resourcesType.equals("RESOURCES_ALL") || resourcesType.equals(ResourceTypes.RESOURCE_FILE)))
+                        break;
                     collectionJSON.getResources().addFileResource(new FileResourceJSON((FileResource) resource));
                     break;
                 case RES_REPOSITORY:
+                    if (!(resourcesType.equals("RESOURCES_ALL") || resourcesType.equals(ResourceTypes.RESOURCE_REPOSITORY)))
+                        break;
                     collectionJSON.getResources()
                             .addRepositoryResource(new RepositoryResourceJSON((RepositoryResource) resource));
                     break;
                 case RES_CODE_SNIPPET:
+                    if (!(resourcesType.equals("RESOURCES_ALL") || resourcesType.equals(ResourceTypes.RESOURCE_CODE_SNIPPET)))
+                        break;
                     collectionJSON.getResources()
                             .addCodeSnippetResource(new CodeSnippetResourceJSON((CodeSnippetResource) resource));
                     break;
                 case RES_MD:
+                    if (!(resourcesType.equals("RESOURCES_ALL") || resourcesType.equals(ResourceTypes.RESOURCE_MARKDOWN)))
+                        break;
                     collectionJSON.getResources()
                             .addMarkdownResource(new MarkdownDocumentResourceJSON((MarkdownDocumentResource) resource));
                     break;
                 case RES_GUIDE:
+                    if (!(resourcesType.equals("RESOURCES_ALL") || resourcesType.equals(ResourceTypes.RESOURCE_GUIDE)))
+                        break;
                     collectionJSON.getResources()
                             .addGuideResource(new GuideResourceJSON((GuideResource) resource));
                     break;

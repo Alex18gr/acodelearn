@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/ContentNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/rest/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/ResourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,13 +40,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>security</find>
-      <find>cors</find>
-      <find>Cors</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,7 +150,9 @@
       <workItem from="1565301137029" duration="663000" />
       <workItem from="1565382941655" duration="890000" />
       <workItem from="1565433162873" duration="16586000" />
-      <workItem from="1565697049221" duration="11337000" />
+      <workItem from="1565697049221" duration="14565000" />
+      <workItem from="1565874654609" duration="2925000" />
+      <workItem from="1565961054249" duration="5229000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -252,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565705396362</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added resource delete mappings and content not found exception">
+      <created>1565740143610</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565740143610</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +284,29 @@
     <MESSAGE value="Improve update mappings and models" />
     <MESSAGE value="Added file resource add controller mapping" />
     <MESSAGE value="Added resource delete mappings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added resource delete mappings" />
+    <MESSAGE value="Added resource delete mappings and content not found exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added resource delete mappings and content not found exception" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>292</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>302</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
+          <line>306</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
