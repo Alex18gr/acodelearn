@@ -4,6 +4,8 @@ import com.alexc.acodelearn.resourceserver.util.ResourceHelper;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import java.io.Serializable;
+
 // @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "className")
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -18,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = MarkdownDocumentResourceJSON.class, name = ResourceHelper.ResourceTypes.RESOURCE_MARKDOWN),
         @JsonSubTypes.Type(value = RepositoryResourceJSON.class, name = ResourceHelper.ResourceTypes.RESOURCE_REPOSITORY)
 })
-public abstract class AbstractResourceJSON {
+public abstract class AbstractResourceJSON implements Serializable {
 
     public abstract String getType();
 

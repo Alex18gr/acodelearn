@@ -91,13 +91,13 @@ public class Course implements Serializable {
             jgen.writeEndObject();
         }
     }
-//
-//    @OneToMany(
-//            fetch = FetchType.LAZY,
-//            mappedBy = "course",
-//            cascade = CascadeType.ALL
-//
-//    )
-//    private List<CourseSection> courseSections;
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            mappedBy = "course",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<CourseSection> courseSections;
 
 }

@@ -1,6 +1,7 @@
 package com.alexc.acodelearn.resourceserver.controller;
 
 import com.alexc.acodelearn.resourceserver.entity.Course;
+import com.alexc.acodelearn.resourceserver.entity.CourseSection;
 import com.alexc.acodelearn.resourceserver.entity.Resource.*;
 import com.alexc.acodelearn.resourceserver.entity.User;
 import com.alexc.acodelearn.resourceserver.json.CourseJSON;
@@ -117,6 +118,9 @@ public class CourseController {
         ResponseEntity<? extends AbstractResourceJSON> responseEntity = getResponseEntity(savedResource);
         return responseEntity;
     }
+
+//    @RequestMapping(value = "/course/{courseId}/sections", method = RequestMethod.GET)
+//    public void getAll
 
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.DELETE)
     public void deleteResource(
@@ -346,6 +350,18 @@ public class CourseController {
 
         // create and return the http entity with the custom headers and the file data
         return new HttpEntity<byte[]>(fileResource.getFileData(), headers);
+    }
+
+    @RequestMapping("/demo-endpoint-1")
+    public void getCourseSectionsDetailsDemo() {
+        Course course = this.courseService.findById(1);
+            List<CourseSection> courseSections = course.getCourseSections();
+        // logger.info(courseSections.toString());
+        for (CourseSection cs : courseSections) {
+            if (cs.getResources() != null) {
+                logger.info(cs.getResources().toString());
+            }
+        }
     }
 
 }
