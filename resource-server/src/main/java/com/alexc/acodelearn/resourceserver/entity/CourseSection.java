@@ -2,10 +2,10 @@ package com.alexc.acodelearn.resourceserver.entity;
 
 import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity @Data
@@ -22,6 +22,13 @@ public class CourseSection implements Serializable {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "order")
+    private Integer order;
+
+    @Column(name = "date")
+    @Temporal(TemporalType.DATE)
+    protected Date dateCreated = new Date();
 
     @ManyToOne
     @JoinColumn(name="course_id", nullable=false)

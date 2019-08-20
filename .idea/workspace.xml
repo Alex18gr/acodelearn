@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="Updated get mappings and added string resource type validation">
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/CourseSection.java" afterDir="false" />
+    <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/CourseSectionJSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseSectionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/Resource/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/AbstractResourceJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/resource/AbstractResourceJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/CourseSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/CourseSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -158,7 +158,7 @@
       <workItem from="1566044637047" duration="2221000" />
       <workItem from="1566139183287" duration="3290000" />
       <workItem from="1566235270908" duration="7938000" />
-      <workItem from="1566321542019" duration="5259000" />
+      <workItem from="1566321542019" duration="12693000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -265,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565996988520</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added map entities for the course sections">
+      <created>1566336342188</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1566336342188</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,19 +306,20 @@
     <MESSAGE value="Added resource delete mappings" />
     <MESSAGE value="Added resource delete mappings and content not found exception" />
     <MESSAGE value="Updated get mappings and added string resource type validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated get mappings and added string resource type validation" />
+    <MESSAGE value="Added map entities for the course sections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added map entities for the course sections" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
-          <line>356</line>
+          <line>424</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
-          <line>363</line>
+          <line>431</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

@@ -4,10 +4,7 @@ import com.alexc.acodelearn.resourceserver.entity.Course;
 import com.alexc.acodelearn.resourceserver.entity.CourseSection;
 import com.alexc.acodelearn.resourceserver.entity.Resource.*;
 import com.alexc.acodelearn.resourceserver.entity.User;
-import com.alexc.acodelearn.resourceserver.json.CourseJSON;
-import com.alexc.acodelearn.resourceserver.json.DetailedResourcesCollectionJSON;
-import com.alexc.acodelearn.resourceserver.json.ResourceJSON;
-import com.alexc.acodelearn.resourceserver.json.ResourcesCollectionJSON;
+import com.alexc.acodelearn.resourceserver.json.*;
 import com.alexc.acodelearn.resourceserver.json.resource.*;
 import com.alexc.acodelearn.resourceserver.rest.ContentNotFoundException;
 import com.alexc.acodelearn.resourceserver.rest.UserNotAllowedException;
@@ -119,8 +116,78 @@ public class CourseController {
         return responseEntity;
     }
 
-//    @RequestMapping(value = "/course/{courseId}/sections", method = RequestMethod.GET)
-//    public void getAll
+    @RequestMapping(value = "/course/{courseId}/sections", method = RequestMethod.GET)
+    public HttpEntity<List<CourseSectionJSON>> getAllCourseSections(
+            HttpServletRequest request,
+            @PathVariable Integer courseId
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        Course currentCourse = courseService.findById(courseId);
+
+        if (!courseService.isUserOwnCourse(user, currentCourse) || !courseService.isUserEnrolledInCourse(user, currentCourse)) {
+            throw new UserNotAllowedException("User doesnt own or not enrolled to this course");
+        }
+
+        List<CourseSection> courseSections = currentCourse.getCourseSections();
+        List<CourseSectionJSON> courseSectionsJSON = new ArrayList<>();
+        for (CourseSection cs : courseSections) {
+            courseSectionsJSON.add(
+                    new CourseSectionJSON(
+                            cs,
+                            cs.getCourse(),
+                            cs.getResources()
+                    )
+            );
+        }
+
+        return new ResponseEntity<>(courseSectionsJSON, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/course/{courseId}/sections", method = RequestMethod.POST)
+    public HttpEntity<CourseSectionJSON> saveCourseSection(
+            HttpServletRequest request,
+            @RequestBody CourseSectionJSON courseSectionJSON,
+            @PathVariable String courseId
+    ) {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = Integer.parseInt(courseId);
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        CourseSection savedCourseSection = this.courseService.saveCourseSectionJSON(courseSectionJSON, currentCourse);
+        return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/course/{courseId}/sections/{sectionId}", method = RequestMethod.PUT)
+    public HttpEntity<CourseSectionJSON> updateCourseSection(
+            HttpServletRequest request,
+            @RequestBody CourseSectionJSON courseSectionJSON,
+            @PathVariable String courseId,
+            @PathVariable String sectionId) {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = Integer.parseInt(courseId);
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        CourseSection savedCourseSection = this.courseService.saveCourseSectionJSON(courseSectionJSON, currentCourse);
+        return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
+    }
 
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.DELETE)
     public void deleteResource(
