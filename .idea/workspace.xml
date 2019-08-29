@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/json/CourseSectionJSON.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/repository/CourseSectionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/CourseSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/entity/CourseSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/util/ResourceHelper.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +157,9 @@
       <workItem from="1566044637047" duration="2221000" />
       <workItem from="1566139183287" duration="3290000" />
       <workItem from="1566235270908" duration="7938000" />
-      <workItem from="1566321542019" duration="12693000" />
+      <workItem from="1566321542019" duration="12870000" />
+      <workItem from="1566382164132" duration="1679000" />
+      <workItem from="1567077299301" duration="6067000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -272,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566336342188</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added new course section and get all course sections endpoints and updated repositories and course service">
+      <created>1566344295011</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1566344295011</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,23 +315,8 @@
     <MESSAGE value="Added resource delete mappings and content not found exception" />
     <MESSAGE value="Updated get mappings and added string resource type validation" />
     <MESSAGE value="Added map entities for the course sections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added map entities for the course sections" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
-          <line>424</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java</url>
-          <line>431</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added new course section and get all course sections endpoints and updated repositories and course service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new course section and get all course sections endpoints and updated repositories and course service" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

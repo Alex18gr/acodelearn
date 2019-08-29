@@ -172,7 +172,7 @@ public class CourseController {
             HttpServletRequest request,
             @RequestBody CourseSectionJSON courseSectionJSON,
             @PathVariable String courseId,
-            @PathVariable String sectionId) {
+            @PathVariable Integer sectionId) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -185,7 +185,13 @@ public class CourseController {
             throw new UserNotAllowedException("User not in role or user not own the resource");
         }
 
-        CourseSection savedCourseSection = this.courseService.saveCourseSectionJSON(courseSectionJSON, currentCourse);
+        CourseSection currentCourseSection = this.courseService.findCourseSectionFromCourseById(sectionId, currentCourse);
+
+        if (currentCourseSection == null) {
+            throw new ContentNotFoundException("course section requested not found or is not belong to current course");
+        }
+
+        CourseSection savedCourseSection = this.courseService.updateCourseSectionJSON(courseSectionJSON, currentCourseSection);
         return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
     }
 

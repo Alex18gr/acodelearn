@@ -130,6 +130,9 @@ public class ResourceHelper {
 
         DetailedResourcesCollectionJSON collectionJSON = new DetailedResourcesCollectionJSON(new Date());
 
+        if (resources == null)
+            return collectionJSON;
+
         for (Resource resource : resources) {
 
             switch (resource.getClass().getSimpleName()) {

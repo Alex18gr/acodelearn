@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,6 +29,10 @@ public class CourseService {
 
     public Course findById(int id) {
         return courseRepository.findById(id);
+    }
+
+    public CourseSection findCourseSectionById(int id) {
+        return courseSectionRepository.findById(id).get();
     }
 
     public boolean isUserEnrolledInCourse(User user, Course course) {
@@ -65,6 +70,7 @@ public class CourseService {
         courseSection.setDescription(courseSectionJSON.getDescription());
         courseSection.setOrder(courseSectionJSON.getOrder());
         courseSection.setDateCreated(courseSectionJSON.getDateCreated());
+        courseSection.setCourse(course);
 
         return this.courseSectionRepository.save(courseSection);
     }
@@ -79,6 +85,13 @@ public class CourseService {
         return this.courseSectionRepository.save(courseSection);
     }
 
-    public
-
+    public CourseSection findCourseSectionFromCourseById(int sectionId, Course currentCourse) {
+        List<CourseSection> courseSections = currentCourse.getCourseSections();
+        for (CourseSection cs : courseSections) {
+            if (cs.getCourseSectionId() == sectionId) {
+                return cs;
+            }
+        }
+        return null;
+    }
 }

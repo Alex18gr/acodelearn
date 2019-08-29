@@ -23,7 +23,7 @@ public class CourseSection implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "order")
+    @Column(name = "section_order")
     private Integer order;
 
     @Column(name = "date")
