@@ -88,10 +88,75 @@ public class CourseService {
     public CourseSection findCourseSectionFromCourseById(int sectionId, Course currentCourse) {
         List<CourseSection> courseSections = currentCourse.getCourseSections();
         for (CourseSection cs : courseSections) {
-            if (cs.getCourseSectionId() == sectionId) {
+            if (cs.getCourseSectionId().getCourseSectionId() == sectionId) {
                 return cs;
             }
         }
         return null;
+    }
+
+    public void deleteCourseSection(CourseSection cs) {
+        this.courseSectionRepository.delete(cs);
+    }
+
+    public void deleteCourseSectionById(CourseSection.CourseSectionId courseSectionId, Course course) {
+        // this.courseSectionRepository.deleteById(courseSectionId);
+        this.courseSectionRepository.deleteByCourseSectionId(courseSectionId, course);
+//        this.courseSectionRepository.deleteByCourseSectionIdAndCourse(
+//                courseSectionId,
+//                course
+//        );
+    }
+
+    public CourseSection saveCourseSection(CourseSection courseSection) {
+        return this.courseSectionRepository.save(courseSection);
+    }
+
+    public boolean checkCourseContainResourcesByIds(Course currentCourse, int[] resourceIds, ArrayList<Resource> addResources) {
+        boolean resourceExists;
+        for (int resourceId : resourceIds) {
+            resourceExists = false;
+            for (Resource res : currentCourse.getCourseResources()) {
+                if (res.getResourceId() == resourceId) {
+                    addResources.add(res);
+                    resourceExists = true;
+                }
+            }
+            if (!resourceExists) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean checkCourseSectionContainResourcesByIds(Course currentCourse, int[] resourceIds) {
+        boolean resourceExist;
+        for (int resourceId : resourceIds) {
+            resourceExist = false;
+            for (Resource res : currentCourse.getCourseResources()) {
+                if (res.getResourceId() == resourceId) {
+                    resourceExist = true;
+                    break;
+                }
+            }
+            if (!resourceExist) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public CourseSection deleteResourcesFromCourseSection(CourseSection courseSection, int[] resourceIds) {
+        for (int resourceId : resourceIds) {
+            for (Resource res : courseSection.getResources()) {
+                if (res.getResourceId() == resourceId) {
+                    courseSection.getResources().remove(res);
+                    break;
+                }
+            }
+        }
+
+        return this.saveCourseSection(courseSection);
     }
 }

@@ -1,7 +1,9 @@
 package com.alexc.acodelearn.resourceserver.entity;
 
 import com.alexc.acodelearn.resourceserver.entity.Resource.Resource;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,10 +14,20 @@ import java.util.List;
 @Table(name = "course_section")
 public class CourseSection implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_course_section")
-    private int courseSectionId;
+    @Embeddable
+    @Data @NoArgsConstructor
+    public static class CourseSectionId implements Serializable {
+
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id_course_section")
+        private int courseSectionId;
+
+        @Column(name="course_id", nullable = false)
+        private int courseId;
+    }
+
+    @EmbeddedId
+    private CourseSectionId courseSectionId;
 
     @Column(name = "name")
     private String name;
@@ -31,11 +43,11 @@ public class CourseSection implements Serializable {
     protected Date dateCreated = new Date();
 
     @ManyToOne
-    @JoinColumn(name="course_id", nullable=false)
+    @MapsId(value = "employeeKey")
     private Course course;
 
     @ManyToMany(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
-            CascadeType.REFRESH, CascadeType.REMOVE })
+            CascadeType.REFRESH })
     @JoinTable(
             name = "course_section_has_resource",
             joinColumns = {

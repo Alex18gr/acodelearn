@@ -24,7 +24,7 @@ public class CourseSectionJSON {
     private DetailedResourcesCollectionJSON resources;
 
     public CourseSectionJSON(CourseSection cs, Course course, List<Resource> resources) {
-        this.courseSectionId = cs.getCourseSectionId();
+        this.courseSectionId = cs.getCourseSectionId().getCourseSectionId();
         this.name = cs.getName();
         this.description = cs.getDescription();
         this.order = cs.getOrder();
@@ -34,7 +34,7 @@ public class CourseSectionJSON {
     }
 
     public CourseSectionJSON(CourseSection cs) {
-        this.courseSectionId = cs.getCourseSectionId();
+        this.courseSectionId = cs.getCourseSectionId().getCourseSectionId();
         this.name = cs.getName();
         this.description = cs.getDescription();
         this.order = cs.getOrder();

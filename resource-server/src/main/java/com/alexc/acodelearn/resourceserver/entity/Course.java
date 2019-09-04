@@ -82,16 +82,6 @@ public class Course implements Serializable {
                 '}';
     }
 
-    public static class CourseJsonSerializer extends JsonSerializer<Course> {
-        @Override
-        public void serialize(Course course, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
-            jgen.writeStartObject();
-            jgen.writeNumber(course.getId());
-            jgen.writeString(course.getTitle());
-            jgen.writeEndObject();
-        }
-    }
-
     @OneToMany(
             fetch = FetchType.LAZY,
             mappedBy = "course",

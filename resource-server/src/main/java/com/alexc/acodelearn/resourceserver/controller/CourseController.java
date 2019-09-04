@@ -171,13 +171,13 @@ public class CourseController {
     public HttpEntity<CourseSectionJSON> updateCourseSection(
             HttpServletRequest request,
             @RequestBody CourseSectionJSON courseSectionJSON,
-            @PathVariable String courseId,
+            @PathVariable Integer courseId,
             @PathVariable Integer sectionId) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         User user = userService.findByUsername(auth.getName());
-        int mCourseId = Integer.parseInt(courseId);
+        int mCourseId = courseId;
         Course currentCourse = courseService.findById(mCourseId);
         if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
                 user, currentCourse
@@ -194,6 +194,117 @@ public class CourseController {
         CourseSection savedCourseSection = this.courseService.updateCourseSectionJSON(courseSectionJSON, currentCourseSection);
         return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/course/{courseId}/sections/{sectionId}", method = RequestMethod.DELETE)
+    public HttpEntity<CourseSectionJSON> deleteCourseSection(
+            HttpServletRequest request,
+            @PathVariable Integer courseId,
+            @PathVariable Integer sectionId
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = courseId;
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        CourseSection currentCourseSection = this.courseService.findCourseSectionFromCourseById(sectionId, currentCourse);
+
+        if (currentCourseSection == null) {
+            throw new ContentNotFoundException("course section requested not found or is not belong to current course");
+        }
+
+        // this.courseService.deleteCourseSection(currentCourseSection);
+//        this.courseService.deleteCourseSection(
+//                this.courseService.findCourseSectionById(currentCourseSection.getCourseSectionId())
+//        );
+        this.courseService.deleteCourseSectionById(
+                currentCourseSection.getCourseSectionId(),
+                currentCourseSection.getCourse()
+        );
+
+        return new ResponseEntity<>(new CourseSectionJSON(currentCourseSection), HttpStatus.OK);
+    }
+    @RequestMapping(value = "/course/{courseId}/sections/{sectionId}/resources", method = RequestMethod.POST)
+    public HttpEntity<CourseSectionJSON> addResourcesToCourseSection(
+            HttpServletRequest request,
+            @PathVariable Integer courseId,
+            @PathVariable Integer sectionId,
+            @RequestBody int[] resourceIds
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = courseId;
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        CourseSection currentCourseSection = this.courseService.findCourseSectionFromCourseById(sectionId, currentCourse);
+
+        if (currentCourseSection == null) {
+            throw new ContentNotFoundException("course section requested not found or is not belong to current course");
+        }
+
+        ArrayList<Resource> addResources = new ArrayList<>();
+        boolean check = this.courseService.checkCourseContainResourcesByIds(currentCourse, resourceIds, addResources);
+
+        if (!check) {
+            throw new ContentNotFoundException("Resources not found in course resources");
+        }
+
+
+        currentCourseSection.getResources().addAll(addResources);
+        CourseSection savedCourseSection = this.courseService.saveCourseSection(currentCourseSection);
+
+        return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/course/{courseId}/sections/{sectionId}/resources", method = RequestMethod.DELETE)
+    public HttpEntity<CourseSectionJSON> deleteResourcesFromCourseSection(
+            HttpServletRequest request,
+            @PathVariable Integer courseId,
+            @PathVariable Integer sectionId,
+            @RequestBody int[] resourceIds
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = courseId;
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        CourseSection currentCourseSection = this.courseService.findCourseSectionFromCourseById(sectionId, currentCourse);
+
+        if (currentCourseSection == null) {
+            throw new ContentNotFoundException("course section requested not found or is not belong to current course");
+        }
+
+        boolean check = this.courseService.checkCourseSectionContainResourcesByIds(currentCourse, resourceIds);
+
+        if (!check) {
+            throw new ContentNotFoundException("Resources not found in course resources");
+        }
+
+        CourseSection savedCourseSection = this.courseService.deleteResourcesFromCourseSection(
+                currentCourseSection,
+                resourceIds
+        );
+
+        return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
+    }
+
 
     @RequestMapping(value = "/course/{courseId}/resource/{resourceId}", method = RequestMethod.DELETE)
     public void deleteResource(
