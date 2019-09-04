@@ -159,4 +159,9 @@ public class CourseService {
 
         return this.saveCourseSection(courseSection);
     }
+
+    public CourseSection updateCourseSectionOrderJSON(CourseSectionJSON courseSectionJSON, CourseSection courseSection) {
+        courseSection.setOrder(courseSectionJSON.getOrder());
+        return this.courseSectionRepository.save(courseSection);
+    }
 }

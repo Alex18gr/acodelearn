@@ -167,6 +167,46 @@ public class CourseController {
         return new ResponseEntity<>(new CourseSectionJSON(savedCourseSection), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/course/{courseId}/sections/order", method = RequestMethod.PUT)
+    public HttpEntity<List<CourseSectionJSON>> updateCourseSectionsOrder(
+            HttpServletRequest request,
+            @RequestBody List<CourseSectionJSON> courseSectionsJSON,
+            @PathVariable Integer courseId
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = courseId;
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        List<CourseSection> savedCourseSections = new ArrayList<>();
+        for (CourseSectionJSON csJson : courseSectionsJSON) {
+            CourseSection currentCourseSection = this.courseService.findCourseSectionFromCourseById(
+                    csJson.getCourseSectionId(),
+                    currentCourse
+            );
+            if (currentCourseSection == null) {
+                throw new ContentNotFoundException("course section requested not found or is not belong to current course");
+            }
+
+            CourseSection savedCourseSection = this.courseService.updateCourseSectionOrderJSON(csJson, currentCourseSection);
+            savedCourseSections.add(savedCourseSection);
+        }
+
+        List<CourseSectionJSON> savedCourseSectionsJSON = new ArrayList<>();
+
+        for (CourseSection cs : savedCourseSections) {
+            savedCourseSectionsJSON.add(new CourseSectionJSON(cs));
+        }
+
+        return new ResponseEntity<>(savedCourseSectionsJSON, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/course/{courseId}/sections/{sectionId}", method = RequestMethod.PUT)
     public HttpEntity<CourseSectionJSON> updateCourseSection(
             HttpServletRequest request,
