@@ -312,7 +312,7 @@ public class CourseController {
             HttpServletRequest request,
             @PathVariable Integer courseId,
             @PathVariable Integer sectionId,
-            @RequestBody int[] resourceIds
+            @RequestParam(value = "resourceIds") int[] resourceIds
     ) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
