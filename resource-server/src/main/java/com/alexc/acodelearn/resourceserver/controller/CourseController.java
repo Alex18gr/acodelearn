@@ -65,6 +65,28 @@ public class CourseController {
         return new CourseJSON.CourseListJSON(courses);
     }
 
+    @RequestMapping(value = "/course/{courseId}/students", method = RequestMethod.GET)
+    public ResponseEntity<List<UserJSON>> getCourseStudents(
+            HttpServletRequest request,
+            @PathVariable Integer courseId
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        int mCourseId = courseId;
+        Course currentCourse = courseService.findById(mCourseId);
+        if (!request.isUserInRole("ROLE_TEACHER") || !courseService.isUserOwnCourse(
+                user, currentCourse
+        )) {
+            throw new UserNotAllowedException("User not in role or user not own the resource");
+        }
+
+        return new ResponseEntity<>(
+                this.userService.getUserJSONfromUsersList(currentCourse.getStudentsEnrolled()),
+                HttpStatus.OK
+        );
+    }
+
     @RequestMapping("/course/{courseId}/resources")
     @Transactional
     public ResourcesCollectionJSON getCourseResources(HttpServletRequest request, @PathVariable String courseId) {
