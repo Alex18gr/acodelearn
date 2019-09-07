@@ -21,7 +21,7 @@ public class CourseSectionJSON {
     private Integer order;
     private Date dateCreated;
     private CourseJSON course;
-    private DetailedResourcesCollectionJSON resources;
+    private DetailedResourcesCollectionJSON.DetailedResourcesTypeCollectionJSON resources;
 
     public CourseSectionJSON(CourseSection cs, Course course, List<Resource> resources) {
         this.courseSectionId = cs.getCourseSectionId().getCourseSectionId();
@@ -30,7 +30,7 @@ public class CourseSectionJSON {
         this.order = cs.getOrder();
         this.dateCreated = cs.getDateCreated();
         this.course = new CourseJSON(course);
-        this.resources = ResourceHelper.getDetailedResourcesCollectionJSONfromResources(resources);
+        this.resources = ResourceHelper.getDetailedResourcesCollectionJSONfromResources(resources).getResources();
     }
 
     public CourseSectionJSON(CourseSection cs) {
@@ -40,7 +40,7 @@ public class CourseSectionJSON {
         this.order = cs.getOrder();
         this.dateCreated = cs.getDateCreated();
         this.course = new CourseJSON(cs.getCourse());
-        this.resources = ResourceHelper.getDetailedResourcesCollectionJSONfromResources(cs.getResources());
+        this.resources = ResourceHelper.getDetailedResourcesCollectionJSONfromResources(cs.getResources()).getResources();
     }
 
 }
