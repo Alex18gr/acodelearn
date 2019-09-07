@@ -71,6 +71,7 @@ public class CourseService {
         courseSection.setOrder(courseSectionJSON.getOrder());
         courseSection.setDateCreated(courseSectionJSON.getDateCreated());
         courseSection.setCourse(course);
+        courseSection.setCourseSectionId(new CourseSection.CourseSectionId(course));
 
         return this.courseSectionRepository.save(courseSection);
     }

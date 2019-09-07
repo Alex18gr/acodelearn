@@ -18,12 +18,17 @@ public class CourseSection implements Serializable {
     @Data @NoArgsConstructor
     public static class CourseSectionId implements Serializable {
 
+        public CourseSectionId(Course course) {
+            this.course = course;
+        }
+
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id_course_section")
         private int courseSectionId;
 
-        @Column(name="course_id", nullable = false)
-        private int courseId;
+        @ManyToOne
+        @JoinColumn(name="course_id", nullable = false)
+        private Course course;
     }
 
     @EmbeddedId
@@ -43,7 +48,8 @@ public class CourseSection implements Serializable {
     protected Date dateCreated = new Date();
 
     @ManyToOne
-    @MapsId(value = "employeeKey")
+    @JoinColumn(name="course_id", nullable = false)
+    @MapsId(value = "courseId")
     private Course course;
 
     @ManyToMany(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
