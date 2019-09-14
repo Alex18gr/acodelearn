@@ -148,7 +148,7 @@ public class CourseController {
         User user = userService.findByUsername(auth.getName());
         Course currentCourse = courseService.findById(courseId);
 
-        if (!courseService.isUserOwnCourse(user, currentCourse) || !courseService.isUserEnrolledInCourse(user, currentCourse)) {
+        if (!courseService.isUserOwnCourse(user, currentCourse) && !courseService.isUserEnrolledInCourse(user, currentCourse)) {
             throw new UserNotAllowedException("User doesnt own or not enrolled to this course");
         }
 
@@ -165,6 +165,39 @@ public class CourseController {
         }
 
         return new ResponseEntity<>(courseSectionsJSON, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/course/{courseId}/sections/{sectionId}", method = RequestMethod.GET)
+    public HttpEntity<CourseSectionJSON> getCourseSection(
+            HttpServletRequest request,
+            @PathVariable Integer courseId,
+            @PathVariable int sectionId) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+        Course currentCourse = courseService.findById(courseId);
+
+        if (!courseService.isUserOwnCourse(user, currentCourse) && !courseService.isUserEnrolledInCourse(user, currentCourse)) {
+            throw new UserNotAllowedException("User doesnt own or not enrolled to this course");
+        }
+
+        List<CourseSection> courseSections = currentCourse.getCourseSections();
+        CourseSection currentCourseSection = null;
+        for (CourseSection cs : courseSections) {
+            if (cs.getCourseSectionId().getCourseSectionId() == sectionId) {
+                currentCourseSection = cs;
+                break;
+            }
+        }
+
+        if (currentCourseSection == null) {
+            throw new ContentNotFoundException("Could not find course section with section id " + sectionId +
+                    " in course with id: " + courseId);
+        }
+
+        CourseSectionJSON courseSectionJSON = new CourseSectionJSON(currentCourseSection);
+
+        return new ResponseEntity<>(courseSectionJSON, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/course/{courseId}/sections", method = RequestMethod.POST)

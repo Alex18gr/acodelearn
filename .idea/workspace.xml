@@ -165,7 +165,9 @@
       <workItem from="1568234652779" duration="4378000" />
       <workItem from="1568277440796" duration="100000" />
       <workItem from="1568284018585" duration="1608000" />
-      <workItem from="1568391153703" duration="2790000" />
+      <workItem from="1568391153703" duration="2846000" />
+      <workItem from="1568420534053" duration="79000" />
+      <workItem from="1568456951847" duration="3189000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -328,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567874894583</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fixed endpoint authorization bugs">
+      <created>1568420389598</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1568420389599</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +379,8 @@
     <MESSAGE value="updated course section JSON model" />
     <MESSAGE value="updated course section resources endpoints" />
     <MESSAGE value="update course section key mapping and creating new course section in courses service" />
-    <option name="LAST_COMMIT_MESSAGE" value="update course section key mapping and creating new course section in courses service" />
+    <MESSAGE value="Fixed endpoint authorization bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed endpoint authorization bugs" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
