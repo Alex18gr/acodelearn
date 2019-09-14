@@ -428,7 +428,7 @@ public class CourseController {
         Course currentCourse = courseService.findById(courseId);
         Resource resource = resourceService.findByResourceId(resourceId);
 
-        if (!courseService.isUserOwnCourse(user, currentCourse) || !courseService.isUserEnrolledInCourse(user, currentCourse)) {
+        if (!courseService.isUserOwnCourse(user, currentCourse) && !courseService.isUserEnrolledInCourse(user, currentCourse)) {
             throw new UserNotAllowedException("User doesnt own or not enrolled to this course");
         }
 

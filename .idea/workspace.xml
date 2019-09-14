@@ -4,7 +4,6 @@
     <list default="true" id="2d295d7b-26c7-48cc-a47e-7fd136616d3a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resource-server/src/main/java/com/alexc/acodelearn/resourceserver/service/UserService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +54,8 @@
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth0" value="905" />
+    <property name="RequestMappingsPanelWidth1" value="904" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -161,6 +160,12 @@
       <workItem from="1567205720493" duration="11000" />
       <workItem from="1567336838527" duration="26819000" />
       <workItem from="1567695810328" duration="14810000" />
+      <workItem from="1567886905544" duration="1888000" />
+      <workItem from="1568106034847" duration="13864000" />
+      <workItem from="1568234652779" duration="4378000" />
+      <workItem from="1568277440796" duration="100000" />
+      <workItem from="1568284018585" duration="1608000" />
+      <workItem from="1568391153703" duration="2790000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
