@@ -46,6 +46,19 @@ public class CourseController {
     @Autowired
     ResourceService resourceService;
 
+    @RequestMapping(value = "user", method = RequestMethod.GET)
+    public ResponseEntity<UserJSON> getUserDetails(HttpServletRequest request) {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = userService.findByUsername(auth.getName());
+
+        return new ResponseEntity<>(
+                new UserJSON(user),
+                HttpStatus.OK
+        );
+    }
+
     @RequestMapping("/user-courses")
     @Transactional
     public CourseJSON.CourseListJSON getUserCourses(HttpServletRequest request) {

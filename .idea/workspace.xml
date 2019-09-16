@@ -54,8 +54,8 @@
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="905" />
-    <property name="RequestMappingsPanelWidth1" value="904" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -167,7 +167,8 @@
       <workItem from="1568284018585" duration="1608000" />
       <workItem from="1568391153703" duration="2846000" />
       <workItem from="1568420534053" duration="79000" />
-      <workItem from="1568456951847" duration="3189000" />
+      <workItem from="1568456951847" duration="4849000" />
+      <workItem from="1568550678953" duration="2894000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1562803006708</created>
@@ -337,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568420389599</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed endpoint authorization bugs and added get course section endpoint">
+      <created>1568476324788</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1568476324788</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +388,8 @@
     <MESSAGE value="updated course section resources endpoints" />
     <MESSAGE value="update course section key mapping and creating new course section in courses service" />
     <MESSAGE value="Fixed endpoint authorization bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed endpoint authorization bugs" />
+    <MESSAGE value="Fixed endpoint authorization bugs and added get course section endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed endpoint authorization bugs and added get course section endpoint" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
